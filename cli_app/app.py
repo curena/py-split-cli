@@ -1,6 +1,36 @@
-"""cli_app.app: Skeleton of a function."""
+import typer
+from split_service import split
+import json
+
+main = typer.Typer()
+
+@main.command()
+def hello(name: str, verbose: bool=False):
+    print(f"Hello, {name}!")
+
+    if verbose: 
+        print("Program finished.")
+
+@main.command(name="list-all")
+def list_all(environments:dict):
+    response_json = split.list_all_splits()
+    print(json.dumps(response_json, indent=4, sort_keys=True))
+
+@main.command(name="update-split", )
+def update_split(name:str, org:str, body:str, environments:dict):
+
+    response_json = patch("").json()
+
+@main.command(name="update-description")
+def update_desc(name:str, org:str, body:str, environments:dict):
+    response_json = put("").json()
+
+@main.command(name="new-split")
+def add_new(name:str, org:str, body:str, environments:dict):
+    response_json = post("").json()
 
 
-def main(arg_one: str, arg_two: int):
-    """Main function."""
-    return arg_one * arg_two
+
+
+if __name__ == "__main__":
+    main()

@@ -1,3 +1,4 @@
 pytest
+decouple
 pytest-cov
 pre-commit
