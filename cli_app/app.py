@@ -1,5 +1,5 @@
 import typer
-from split_service import split
+from cli_app.split_service import split
 import json
 
 main = typer.Typer()
@@ -16,18 +16,20 @@ def list_all(environments:dict):
     response_json = split.list_all_splits()
     print(json.dumps(response_json, indent=4, sort_keys=True))
 
-@main.command(name="update-split", )
-def update_split(name:str, org:str, body:str, environments:dict):
+# @main.command(name="update-split", )
+# def update_split(name:str, org:str, body:str, environments:dict):
+#     response_json = split.update_split().json()
+#     print(json.dumps(response_json, indent=4, sort_keys=True))
 
-    response_json = patch("").json()
+# @main.command(name="update-description")
+# def update_desc(name:str, org:str, body:str, environments:dict):
+#     response_json = split.update_description().json()
+#     print(json.dumps(response_json, indent=4, sort_keys=True))
 
-@main.command(name="update-description")
-def update_desc(name:str, org:str, body:str, environments:dict):
-    response_json = put("").json()
-
-@main.command(name="new-split")
-def add_new(name:str, org:str, body:str, environments:dict):
-    response_json = post("").json()
+# @main.command(name="new-split")
+# def add_new(name:str, org:str, body:str, environments:dict):
+#     response_json = split.create_split().json()
+#     print(json.dumps(response_json, indent=4, sort_keys=True))
 
 
 
