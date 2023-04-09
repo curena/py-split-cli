@@ -1,5 +1,5 @@
 import typer
-from cli_app.split_service import split
+from split_service import split
 import json
 
 main = typer.Typer()

@@ -1,17 +1,20 @@
 import json
 
-from cli_app.common import constants
+from common import constants
 from splitapiclient.main import get_client
 import logging
 from requests import get, patch, post, put
+print(f'apiKey: {constants.API_KEY}')
 
-defaultClient = get_client(constants.API_KEY)
 logging.basicConfig(level=logging.DEBUG)
 
-def get_client(api_key: str):
+def create_client(api_key: str):
     foo: dict = {"apikey": api_key}
-    logging.log(foo)
+    print(f'Foo: {foo}')
+    logging.log(msg=foo, level=logging.INFO)
     return get_client(foo)
+
+client = create_client(constants.API_KEY)
 
 def list_all_splits(environments: dict):
     result = {}
