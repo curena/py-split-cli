@@ -1,6 +1,6 @@
 import json
 
-from common import constants
+from cli_app.common import constants
 from splitapiclient.main import get_client
 import logging
 from requests import get, patch, post, put

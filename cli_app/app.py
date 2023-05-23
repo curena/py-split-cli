@@ -1,5 +1,5 @@
 import typer
-from split_service import split
+from cli_app.split_service import split
 import json
 
 class SplitCli:
